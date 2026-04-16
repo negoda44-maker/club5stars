@@ -1301,3 +1301,56 @@ h6 {
   50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
+.price-block {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.old-price {
+  font-size: 16px;
+  color: #777;
+}
+
+.old-price span {
+  text-decoration: line-through;
+}
+
+.new-price {
+  font-size: 34px;
+  font-weight: 900;
+  color: #e60000;
+  animation: pulsePrice 1.2s infinite;
+  position: relative;
+}
+
+/* блиск */
+.new-price::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  animation: shine 2.5s infinite;
+}
+
+.badge-sale {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #28a745;
+  font-weight: 600;
+}
+
+/* пульс */
+@keyframes pulsePrice {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* блиск по ціні */
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 150%; }
+}
